@@ -13,18 +13,21 @@ export default function Card({
   description: string;
 }) {
   return (
-  <div className="card w-96 glass">
+  <div className="card w-96 glass flex flex-col items-center">
+    <div className="w-100">
       <Image
       src={image_url}
       alt="Imagen o pintura"
       width={426}
       height={640}
-      />
-  <div className="card-body">
-    <h2 className="card-title">{artist}</h2>
-    <p>{type} - {description}</p>
+      className="object-fit w-full h-full"
+      ></Image>
+    </div>
+    <div className="card-body">
+      <h2 className="card-title text-xl tracking-wider text-gray-500 md:text-lg dark:text-gray-400 text-center">{artist}</h2>
+      <p><span>{type}</span> - {description}</p>
+    </div>
   </div>
-</div>
   )
 
 }

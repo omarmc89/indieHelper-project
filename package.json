@@ -37,6 +37,8 @@
     "react-markdown": "^8.0.7",
     "tailwind-merge": "^1.14.0",
     "typescript": "5.2.2",
+    "unsplash": "^4.2.0",
+    "unsplash-js": "^7.0.19",
     "use-debounce": "^9.0.4",
     "vaul": "^0.6.8"
   },

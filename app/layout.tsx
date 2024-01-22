@@ -11,7 +11,6 @@ export const metadata = {
   description:
     "indieHelper is an app to help indie makers to showcase their products and get feedback from the community.",
   metadataBase: new URL("https://indiehelper.com"),
-  themeColor: "#FFF",
 };
 
 export default async function RootLayout({
@@ -30,7 +29,6 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
-        <Analytics />
       </body>
     </html>
   );
