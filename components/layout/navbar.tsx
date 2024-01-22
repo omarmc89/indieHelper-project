@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
 import { Session } from "next-auth";
+import { permanent_maker } from "@/app/fonts/index";
 
 export default function NavBar({ session }: { session: Session | null }) {
   const scrolled = useScroll(50);
@@ -18,21 +19,41 @@ export default function NavBar({ session }: { session: Session | null }) {
         } z-30 transition-all`}
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
-          <Link href="/" className="flex items-center font-display text-2xl">
+          <Link href="/" className="flex items-center font-display text-3xl">
             <Image
               src="/indie.svg"
               alt="indieHelper logo"
-              width="30"
-              height="30"
+              width="40"
+              height="40"
               className="mr-2 rounded-sm"
             ></Image>
             <p>indieHelper</p>
           </Link>
+          <Link href="#" className={`flex items-center font-display text-xl`}>
+            <Image
+              src="/artworks.svg"
+              alt="artwork logo"
+              width="20"
+              height="20"
+              className="mr-2 rounded-sm"
+            ></Image>
+            <p>Artworks</p>
+          </Link>
+          <Link href="#" className="flex items-center font-display text-xl">
+            <Image
+              src="/artist.svg"
+              alt="artwork logo"
+              width="20"
+              height="20"
+              className="mr-2 rounded-sm"
+            ></Image>
+            <p>Artists</p>
+          </Link>
           <div>
-              <button
-                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-              >
-                Sign In
+            <button
+              className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+            >
+              Sign In
               </button>
           </div>
         </div>
