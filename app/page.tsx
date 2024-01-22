@@ -2,7 +2,6 @@
 import Card from "@/components/home/card";
 import { pictures } from "../lib/data.js"
 import { permanent_maker} from "./fonts/index";
-import useScroll from "@/lib/hooks/use-scroll";
 
 
 export default async function Home() {

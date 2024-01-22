@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
 import { Session } from "next-auth";
-import { permanent_maker } from "@/app/fonts/index";
 
 export default function NavBar({ session }: { session: Session | null }) {
   const scrolled = useScroll(50);
