@@ -1,10 +1,22 @@
-
+import { sql } from "@vercel/postgres";
 import Card from "@/components/home/card";
 import { pictures } from "../lib/data.js"
 import { permanent_maker} from "./fonts/index";
 
 
 export default async function Home() {
+
+  const fetchArtworks = async() => {
+    const data = await sql`
+    SELECT a.id, a.title, a.description, a.image_url, u.name, u.email  FROM artworks AS a
+    INNER JOIN artists AS art ON a.artist_id = art.id
+    INNER JOIN users AS u ON art.user_id = u.id
+    `
+    return data.rows
+  }
+  const artworks = await fetchArtworks()
+  console.log(artworks)
+
 
   return (
     <>
@@ -25,11 +37,11 @@ export default async function Home() {
         </h1>
       </div>
       <div className="z-10 my-10 grid w-full max-w-screen-xl grid-cols-1 gap-8 px-5 lg:grid-cols-3 md:grid-cols-2 xl:px-0 items-center justify-center">
-        {pictures.map(({ id, artist, type, image_url, description}) => (
+        {artworks.map(({ id, title, name, image_url, description}) => (
           <Card
             key={id}
-            artist={artist}
-            type={type}
+            artist={name}
+            type={title}
             description={description}
             image_url={image_url}
           />
