@@ -13,7 +13,7 @@ export default function NavBar() {
           scrolled
             ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
             : "bg-white/0"
-        } z-30 transition-all`}
+        } z-20 transition-all`}
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
           <Link href="/" className="flex items-center font-display text-3xl">
@@ -26,7 +26,7 @@ export default function NavBar() {
             ></Image>
             <p>indieHelper</p>
           </Link>
-          <Link href="#" className={`flex items-center font-display text-xl`}>
+          <Link href="/artworks" className={`flex items-center font-display text-xl`}>
             <Image
               src="/artworks.svg"
               alt="artwork logo"

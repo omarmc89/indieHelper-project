@@ -1,6 +1,5 @@
 import { sql } from "@vercel/postgres";
 import Card from "@/components/home/card";
-import { pictures } from "../lib/data.js"
 import { permanent_maker} from "./fonts/index";
 
 
@@ -11,6 +10,8 @@ export default async function Home() {
     SELECT a.id, a.title, a.description, a.image_url, u.name, u.email  FROM artworks AS a
     INNER JOIN artists AS art ON a.artist_id = art.id
     INNER JOIN users AS u ON art.user_id = u.id
+    ORDER BY a.created_at DESC
+    LIMIT 5
     `
     return data.rows
   }
