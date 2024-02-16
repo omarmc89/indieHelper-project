@@ -36,7 +36,7 @@ export default function NavBar() {
             ></Image>
             <p>Artworks</p>
           </Link>
-          <Link href="#" className="flex items-center font-display text-xl">
+          <Link href="/artists" className="flex items-center font-display text-xl">
             <Image
               src="/artist.svg"
               alt="artwork logo"
