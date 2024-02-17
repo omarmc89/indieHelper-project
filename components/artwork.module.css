@@ -1,0 +1,8 @@
+.imgContainer{
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imgContainer:hover{
+  opacity: 0.2;
+}
+
