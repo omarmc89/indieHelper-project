@@ -1,6 +1,5 @@
 import { fetchArtists} from "@/lib/utils"
 import ArtistCard from "@/components/ArtistCard"
-import styles from './artists.module.css'
 
 export default async function Artists() {
 

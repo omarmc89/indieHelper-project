@@ -3,7 +3,8 @@ import cx from "classnames";
 import { sfPro, inter } from "./fonts";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import { Suspense } from "react";
+import { Suspense} from "react";
+import { auth } from "auth";
 
 export const metadata = {
   title: "indieHelper",
@@ -18,14 +19,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
 
+  const session = await auth()
   return (
     <html lang="en">
       <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100 z-1" />
+        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100 z-100" />
         <Suspense fallback="...">
-          <Navbar />
+          <Navbar session= {session}/>
         </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32 z-5">
+        <main className="flex min-h-screen w-full flex-col items-center justify-center z-5">
           {children}
         </main>
         <Footer />
@@ -33,3 +35,5 @@ export default async function RootLayout({
     </html>
   );
 }
+
+

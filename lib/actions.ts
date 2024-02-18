@@ -1,5 +1,6 @@
 import { signIn } from 'auth';
 import { AuthError } from 'next-auth';
+import { useRouter } from 'next/router';
  
  
 export async function authenticate(
@@ -7,7 +8,10 @@ export async function authenticate(
   formData: FormData,
 ) {
   try {
-    await signIn('credentials', formData);
+    const login = await signIn('credentials', formData);
+    
+    console.log(login)
+
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

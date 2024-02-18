@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="z-10 h-dvh px-5 xl:px-0 flex flex-col items-center justify-start">
+      <div className="z-10 h-dvh px-5 xl:px-0 flex flex-col items-center justify-around">
         <h1
           className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
@@ -22,12 +22,12 @@ export default async function Home() {
         </h1>
         <h1
             className={`animate-fade-up  bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-5xl md:leading-[5rem]`}
-          style={{ animationDelay: "0.3s", animationFillMode: "forwards", marginTop: '4rem', marginBottom: '4rem' }}
+          style={{ animationDelay: "0.3s", animationFillMode: "forwards"}}
         >
           {`Let's see our latest artists works!`}
         </h1>
         <div className={`flex items-center justify-center animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-5xl md:leading-[5rem]`}
-        style={{ animationDelay: "0.3s", animationFillMode: "forwards", marginTop: '4rem', marginBottom: '4rem' }}>
+        style={{ animationDelay: "0.3s", animationFillMode: "forwards", marginBottom: '4rem' }}>
 
         <Image
           src="/arrow.svg"
@@ -35,7 +35,7 @@ export default async function Home() {
           width={100}
           height={100}
           className={`w-screen animate-bounce w-20 h-20 md:w-40 md:h-40`}
-          style={{ animationDelay: "0.4s", animationFillMode: "forwards", marginTop: '4rem', marginBottom: '4rem', objectPosition: 'center'}}
+          style={{ animationDelay: "0.4s", animationFillMode: "forwards", objectPosition: 'center', opacity: 0.8}}
         />
         </div>
       </div>

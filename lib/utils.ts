@@ -1,4 +1,10 @@
 import { sql } from '@vercel/postgres'
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 async function fetchArtowrks() {
   const data = await sql`
@@ -37,13 +43,11 @@ async function fetchArtowrks() {
   function onlyId(data: any[]) {
     return data.map((element)=>element.id)
   }
-  
-
 
 export {
   fetchArtowrks, 
   fetchArtists,
   fetchPhotos,
   fetchPaintings,
-  onlyId
+  onlyId,
 }

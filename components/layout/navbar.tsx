@@ -2,19 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import useScroll from "@/lib/hooks/use-scroll";
+import NavBarLogged from "./navbarLogged";
+import NavBarNoLogged from "./navbarNoLogged";
 
-export default async function NavBar() {
-  const scrolled = useScroll(50);
+
+export default async function NavBar({ session} : {session: any}) {
 
   return (
     <>
       <div
-        className={`fixed top-0 flex w-full justify-center ${
-          scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
-            : "bg-white/0"
-        } z-20 transition-all`}
+        className="navbar sticky top-0 flex w-full justify-center z-50"
       >
         <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
           <Link href="/" className="flex items-center font-display text-3xl">
@@ -53,16 +50,7 @@ export default async function NavBar() {
             ></Image>
             <p>Artists</p>
           </Link>
-          <div>
-            <Link
-              href="/login"
-              className="flex items-center font-display text-xl"
-            >
-              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">
-                Sign In
-              </button>
-            </Link>
-          </div>
+          {session ? <NavBarLogged/> : <NavBarNoLogged />}
         </div>
       </div>
     </>
