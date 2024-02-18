@@ -1,7 +1,13 @@
 'use client';
  
-import { montserrat } from '@/app/fonts/index';
-import { useFormState } from 'react-dom';
+import { montserrat } from '@/app/fonts';
+import {
+  AtSymbolIcon,
+  KeyIcon,
+  ExclamationCircleIcon,
+} from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/lib/actions';
  
 export default function LoginForm() {
@@ -48,7 +54,7 @@ export default function LoginForm() {
                 name="password"
                 placeholder="Enter password"
                 required
-                minLength={6}
+                minLength={4}
               />
               <KeyIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -76,8 +82,8 @@ function LoginButton() {
   const { pending } = useFormStatus();
  
   return (
-    <Button className="mt-4 w-full" aria-disabled={pending}>
+    <button className="mt-4 w-full" aria-disabled={pending}>
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
-    </Button>
+    </button>
   );
 }

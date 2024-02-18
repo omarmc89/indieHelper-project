@@ -1,21 +1,22 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import useScroll from "@/lib/hooks/use-scroll";
 
-export default function NavBar() {
+export default async function NavBar() {
   const scrolled = useScroll(50);
 
   return (
     <>
       <div
-        className={`fixed top-0 w-full flex justify-center ${
+        className={`fixed top-0 flex w-full justify-center ${
           scrolled
             ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
             : "bg-white/0"
         } z-20 transition-all`}
       >
-        <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
+        <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
           <Link href="/" className="flex items-center font-display text-3xl">
             <Image
               src="/indie.svg"
@@ -26,7 +27,10 @@ export default function NavBar() {
             ></Image>
             <p>indieHelper</p>
           </Link>
-          <Link href="/artworks" className={`flex items-center font-display text-xl`}>
+          <Link
+            href="/artworks"
+            className={`flex items-center font-display text-xl`}
+          >
             <Image
               src="/artworks.svg"
               alt="artwork logo"
@@ -36,7 +40,10 @@ export default function NavBar() {
             ></Image>
             <p>Artworks</p>
           </Link>
-          <Link href="/artists" className="flex items-center font-display text-xl">
+          <Link
+            href="/artists"
+            className="flex items-center font-display text-xl"
+          >
             <Image
               src="/artist.svg"
               alt="artwork logo"
@@ -47,11 +54,14 @@ export default function NavBar() {
             <p>Artists</p>
           </Link>
           <div>
-            <button
-              className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+            <Link
+              href="/login"
+              className="flex items-center font-display text-xl"
             >
-              Sign In
+              <button className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black">
+                Sign In
               </button>
+            </Link>
           </div>
         </div>
       </div>
