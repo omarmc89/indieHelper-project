@@ -1,4 +1,5 @@
-import { fetchArtowrks, fetchPaintings, fetchPhotos, onlyId } from "@/lib/utils"
+import { fetchArtowrks, fetchPaintings, fetchPhotos} from "@/lib/actions"
+import { onlyId } from "@/lib/utils"
 import Card from "@/components/ArtworkCard"
 
 export default async function Artworks() {

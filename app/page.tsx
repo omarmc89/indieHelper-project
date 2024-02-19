@@ -1,5 +1,5 @@
 
-import { fetchArtowrks } from '@/lib/utils';
+import { fetchArtowrks } from '@/lib/actions';
 import Card from "@/components/ArtworkCard";
 import { permanent_maker} from "./fonts/index";
 import Image from 'next/image';

@@ -1,4 +1,4 @@
-import { fetchArtists} from "@/lib/utils"
+import { fetchArtists} from "@/lib/actions"
 import ArtistCard from "@/components/ArtistCard"
 
 export default async function Artists() {

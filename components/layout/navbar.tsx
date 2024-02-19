@@ -10,7 +10,7 @@ export default async function NavBar({ session} : {session: any}) {
 
   return (
     <>
-      <div
+      <header
         className="navbar sticky top-0 flex w-full justify-center z-50"
       >
         <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
@@ -18,8 +18,8 @@ export default async function NavBar({ session} : {session: any}) {
             <Image
               src="/indie.svg"
               alt="indieHelper logo"
-              width="40"
-              height="40"
+              width="45"
+              height="45"
               className="mr-2 rounded-sm"
             ></Image>
             <p>indieHelper</p>
@@ -31,8 +31,8 @@ export default async function NavBar({ session} : {session: any}) {
             <Image
               src="/artworks.svg"
               alt="artwork logo"
-              width="20"
-              height="20"
+              width="35"
+              height="35"
               className="mr-2 rounded-sm"
             ></Image>
             <p>Artworks</p>
@@ -44,15 +44,15 @@ export default async function NavBar({ session} : {session: any}) {
             <Image
               src="/artist.svg"
               alt="artwork logo"
-              width="20"
-              height="20"
+              width="35"
+              height="35"
               className="mr-2 rounded-sm"
             ></Image>
             <p>Artists</p>
           </Link>
           {session ? <NavBarLogged/> : <NavBarNoLogged />}
         </div>
-      </div>
+      </header>
     </>
   );
 }
