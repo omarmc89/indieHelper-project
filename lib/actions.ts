@@ -33,10 +33,8 @@ async function authenticate(
       password: rawFormData.password,
       redirectTo: '/dashboard',
     });
-    console.log('login', login)
   } catch (error) {
     if (error instanceof AuthError) {
-      console.log('error ----------------------------------')
       switch (error.type) {
         case 'CredentialsSignin':
           return 'Invalid credentials.';
@@ -143,7 +141,7 @@ async function fetchArtworks() {
     return data.rows[0]
   }
 
-  async function fetchUserByEmail(email: string) {
+  async function fetchUserByEmail(email: any) {
     const data = await sql<User>`
     SELECT u.id, u.name, u.email, u.avatar, a.nickname FROM artists AS a
     INNER JOIN users AS u ON a.user_id = u.id
@@ -237,6 +235,7 @@ async function fetchArtworks() {
   async function createPainting (formData: FormData) {
     const session = await auth();
     const email = session?.user?.email
+
     const user = await fetchUserByEmail(email)
     const userId = user[0].id
     const artist = await fetchArtistByUserId(userId)
