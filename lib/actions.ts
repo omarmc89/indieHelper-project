@@ -99,11 +99,14 @@ async function fetchArtworks() {
     }
 
   async function fetchArtists() {
-    const data = await sql<Artist[]>`
+    const data = await sql`
     SELECT u.name, u.email, u.avatar, a.nickname FROM artists AS a
     INNER JOIN users AS u ON a.user_id = u.id
       `
-    return data.rows
+   const artists = data.rows.map((artist) => ({
+      ...artist
+    }));
+    return artists
   }
 
   async function fetchPhotos() {
@@ -340,7 +343,7 @@ async function fetchArtworks() {
       INSERT INTO users (id, name, email, password, avatar)
       VALUES (${userId}, ${userRawFormData.name}, ${userRawFormData.email}, ${passwordHash}, ${avatar})
     `
-    revalidatePath('/dashboard')
+    revalidatePath('/')
 
     await sql`
       INSERT INTO artists (id, nickname, user_id)

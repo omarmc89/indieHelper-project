@@ -6,7 +6,7 @@ export default function PaintingForm()
 {
 return (
   <form action={createPainting}>
-    <div className="min-h-screen p-6 flex items-center justify-center">
+    <div className=" p-6 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
         <div>
           <h2 className="font-semibold text-center text-xl text-gray-600">Create Painting</h2>

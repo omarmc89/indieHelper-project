@@ -6,7 +6,7 @@ export default function CreateArtwork() {
 
   return (
     <section className="forms-container">
-      <h1 className="text-4xl font-bold text-center p-8">Upload your artworks!</h1>
+      <h1 className="text-4xl font-bold text-center">Upload your artworks!</h1>
         <div className="py4">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-2">

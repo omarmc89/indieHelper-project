@@ -11,10 +11,11 @@ export default async function NavBar({ session} : {session: any}) {
   return (
     <>
       <header
-        className="navbar sticky top-0 flex w-full justify-center z-50"
+        className="navbar sticky h-20 top-0 flex w-full items-center justify-center z-50 max-w-screen-xl"
       >
-        <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
-          <Link href="/" className="flex items-center font-display text-3xl">
+        <div className="flex flex-col lg:flex-row h-16 w-full justify-between items-center">
+          <div className="flex flex-col items-center justify-between lg:flex-row h-16 w-30">
+          <Link href="/" className="flex items-center justify-start font-display text-3xl">
             <Image
               src="/indie.svg"
               alt="indieHelper logo"
@@ -24,6 +25,9 @@ export default async function NavBar({ session} : {session: any}) {
             ></Image>
             <p>indieHelper</p>
           </Link>
+          </div>
+          <div className="flex flex-row h-16 w-9/12 items-center justify-around" >
+            <div className="flex flex-row items-center w-full justify-center gap-20">
           <Link
             href="/artworks"
             className={`flex items-center font-display text-xl`}
@@ -49,8 +53,15 @@ export default async function NavBar({ session} : {session: any}) {
               className="mr-2 rounded-sm"
             ></Image>
             <p>Artists</p>
+            
           </Link>
+          </div>
+          <div className="flex flex-row items-center w-1/4 justify-center gap-20">
+
           {session ? <NavBarLogged/> : <NavBarNoLogged />}
+
+          </div>
+        </div>
         </div>
       </header>
     </>

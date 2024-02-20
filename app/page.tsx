@@ -41,7 +41,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="z-10 grid w-full max-w-screen-xl grid-cols-1 gap-8 px-5 lg:grid-cols-3 md:grid-cols-2 xl:px-0 items-center justify-center">
-        {artworks.map(({ id, title, name, image_url}: { id: string, title: string, name: string, image_url: string}) => (
+        {artworks.map(({ id, title, name, image_url}) => (
           <Card
             key={id}
             artist={name}
