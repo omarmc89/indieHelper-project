@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import DeleteButton from '@/app/dashboard/deleteButton'
 
 export default async function UserArtwork({artwork}) {
+
 
 return (
       <article className="p-4 max-h-[500px]" >
@@ -18,8 +20,8 @@ return (
           />
         </div>
         <div className="w-full h-1/6 flex justify-around items-center mt-5">
-          <Link href="#" className="w-1/5 py-1 text-center border-2 border-gray-300 bg-gray-300 rounded-lg text-lg font-bold cursor-pointer shadow-md transition-colors hover:bg-gray-400 hover:text-white focus:outline-none">✏️</Link>
-          <Link href="#" method="DELETE" as="button" className="w-1/5 py-1 text-center border-2 border-gray-300 bg-gray-300 rounded-lg text-lg font-bold cursor-pointer shadow-md transition-colors hover:bg-gray-400 hover:text-white focus:outline-none">❌</Link>
+          <Link href={`/dashboard/artworks/${artwork.id}/edit`} className="w-1/5 py-1 text-center border-2 border-gray-300 bg-gray-300 rounded-lg text-lg font-bold cursor-pointer shadow-md transition-colors hover:bg-gray-400 hover:text-white focus:outline-none">✏️</Link>
+          <DeleteButton id={artwork.id} />
         </div>
       </article>
 )

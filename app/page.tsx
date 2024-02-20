@@ -1,13 +1,14 @@
 
-import { fetchArtowrks } from '@/lib/actions';
+import { fetchArtworks } from '@/lib/actions';
 import Card from "@/components/ArtworkCard";
+import { Artwork } from '@/lib/definitions';
 import { permanent_maker} from "./fonts/index";
 import Image from 'next/image';
 
 
 export default async function Home() {
 
-  const artworks = await fetchArtowrks()
+  const artworks = await fetchArtworks()
 
   return (
     <>
@@ -40,7 +41,7 @@ export default async function Home() {
         </div>
       </div>
       <div className="z-10 grid w-full max-w-screen-xl grid-cols-1 gap-8 px-5 lg:grid-cols-3 md:grid-cols-2 xl:px-0 items-center justify-center">
-        {artworks.map(({ id, title, name, image_url}) => (
+        {artworks.map(({ id, title, name, image_url}: { id: string, title: string, name: string, image_url: string}) => (
           <Card
             key={id}
             artist={name}

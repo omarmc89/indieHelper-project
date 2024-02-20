@@ -29,6 +29,22 @@ export type Artwork = {
   artist_id: string;
 };
 
+export type ArtworkUser = {
+  id: string;
+  title: string;
+  description: string;
+  image_url: string;
+  price: number;
+  created_at: Date;
+  updated_at: Date;
+  artist_id: string;
+  name: string;
+  email: string;
+  password: string;
+  avatar: string;
+
+};
+
 export type Photo = {
   id: string;
   style: string;

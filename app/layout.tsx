@@ -5,6 +5,8 @@ import Footer from "@/components/layout/footer";
 import { Suspense} from "react";
 import { auth } from "@/app/auth";
 
+
+
 export const metadata = {
   title: "indieHelper",
   description:
@@ -21,13 +23,13 @@ export default async function RootLayout({
   const session = await auth()
   return (
     <html lang="en">
-      <body className={`h-full w-full p-0 m-0 ${poppins.className} relative `}>
-        <div className="fixed h-full w-full top-0 overflow:hidden left-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-100 z-0">
-          </div>
+      <body className={`h-full w-full p-0 m-0 ${poppins.className} relative flex flex-col items-center justify-center`}>
+        {/* <div className="fixed h-full w-full top-0 overflow:hidden left-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-100 z-0">
+          </div> */}
         <Suspense fallback="...">
           <Navbar session= {session}/>
         </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center z-5">
+        <main className="flex flex-col items-center justify-center min-h-screen w-full z-20">
           {children}
         </main>
         

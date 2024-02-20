@@ -93,13 +93,13 @@ async function createArtworksTable(client) {
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS artworks (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        artist_id UUID NOT NULL REFERENCES artists(id),
         title VARCHAR(255) NOT NULL,
         description TEXT NOT NULL,
         image_url TEXT NOT NULL,
         price INT NOT NULL,
         updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
-        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-        artist_id UUID NOT NULL REFERENCES artists(id)
+        created_at TIMESTAMP NOT NULL DEFAULT NOW()
       );
     `;
 

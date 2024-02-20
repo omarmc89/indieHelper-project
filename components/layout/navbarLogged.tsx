@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 const NavBar = async () => {
   const pathname = usePathname();
@@ -10,9 +11,9 @@ const NavBar = async () => {
     <>
       <div className="flex flex-row gap-4">
         <Link href="/dashboard" className="flex items-center font-display text-xl">
-          <button className={`rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black
-          ${pathname === '/dashboard' ? 'bg-white text-slate-900' : ''}
-          `}>
+          <button className={twMerge(`rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black
+          ${pathname === '/dashboard' ? 'bg-white text-black' : ''}
+          `)}>
             Profile
           </button>
         </Link>
