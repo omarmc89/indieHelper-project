@@ -5,9 +5,7 @@ import Card from "@/components/ArtworkCard"
 export default async function Artworks() {
   const artworks = await fetchArtworks()
   const paintings = await fetchPaintings()
-  const photos = await fetchPhotos()
   const paintingsId = onlyId(paintings)
-  const photosId = onlyId(photos)
 
   
   return (

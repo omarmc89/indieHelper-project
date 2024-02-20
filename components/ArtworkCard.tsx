@@ -26,7 +26,7 @@ export default function Card({
             alt="Imagen o pintura"
             width={426}
             height={640}
-            className="object-cover w-full h-full border-2 border-gray-300 rounded-xl drop-shadow-lg z-10"
+            className="object-cover object-top w-full h-full border-2 border-gray-300 rounded-xl drop-shadow-lg z-10"
           />
         <p className="absolute top-5 left-5 p-1 font-bold backdrop-hue-rotate-90 bg-white/30 rounded-xl text-gray-900 uppercase z-10">{type}
         </p>
