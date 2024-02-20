@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge"
 
 
 function onlyId(data: any[]) {
-  return data.map((element)=>element.id)
+  return data.map((element)=>element.artwork_id)
 }
 
 export function cn(...inputs: ClassValue[]) {

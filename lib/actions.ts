@@ -129,6 +129,7 @@ async function fetchArtworks() {
     SELECT a.*, p.* FROM artworks AS a
     INNER JOIN paintings AS p ON a.id = p.artwork_id;
       `
+      console.log(data.rows)
       return data.rows
   }
 
